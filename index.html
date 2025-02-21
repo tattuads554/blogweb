@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health & Wellness Hub</title>
+    <title>Health & Hub</title>
     <style>
         * {
             margin: 0;
@@ -169,9 +169,36 @@
     </div>
 
     <!-- Ads Section -->
-    <div class="ads-container">
-        <div id="monetag-ads"></div>
+    <!-- In the Ads Section div -->
+<div class="ads-container">
+    <div id="monetag-ads">
+        <script src='//whephiwums.com/sdk.js' data-zone='8975811' data-sdk='show_8975811'></script>
     </div>
+</div>
+
+<!-- Updated JavaScript -->
+<script>
+    function loadMonetag() {
+        const monetagDiv = document.getElementById('monetag-ads');
+        const newScript = document.createElement('script');
+        newScript.src = '//whephiwums.com/sdk.js';
+        newScript.setAttribute('data-zone', '8975811');
+        newScript.setAttribute('data-sdk', 'show_8975811');
+        monetagDiv.innerHTML = '';
+        monetagDiv.appendChild(newScript);
+    }
+
+    // Add to existing button click handlers
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', function(e) {
+            loadMonetag();
+        });
+    });
+
+    // Keep existing password and scroll animation code
+    function checkPassword() { /* ... */ }
+    window.addEventListener('scroll', () => { /* ... */ });
+</script>
 
     <!-- Secret Access Button -->
     <button class="secret-btn" onclick="checkPassword()">Premium Content</button>
